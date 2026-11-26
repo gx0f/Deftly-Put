@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+/Deftly-Put.zip
+/outputs/
+.env
+.env.*
+*.pem
+*.key
+*.crx
+openai-plan.json

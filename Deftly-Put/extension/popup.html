@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Deftly Put</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <h1>Deftly Put</h1>
+  <p id="state" role="status" aria-live="polite">正在连接本机助手…</p>
+  <button id="account" type="button" hidden></button>
+  <button id="switch" type="button" hidden>切换账号</button>
+  <form id="languages">
+    <fieldset disabled>
+      <legend>翻译设置</legend>
+      <label for="source">默认源语言</label>
+      <select id="source" aria-describedby="source-note"></select>
+      <input id="source-code" aria-label="自定义源语言代码" placeholder="例如 nl 或 pt-BR" maxlength="35" spellcheck="false" hidden>
+      <p class="note" id="source-note">写草稿和查看回译时使用的语言。</p>
+      <label for="target">默认目标语言</label>
+      <select id="target" aria-describedby="target-note"></select>
+      <input id="target-code" aria-label="自定义目标语言代码" placeholder="例如 nl 或 pt-BR" maxlength="35" spellcheck="false" hidden>
+      <p class="note" id="target-note">自己发帖时使用。回复默认跟随原帖语言。</p>
+      <button type="submit">保存语言设置</button>
+    </fieldset>
+    <p id="language-status" role="status"></p>
+  </form>
+  <script src="language-settings.js"></script>
+  <script src="popup.js"></script>
+</body></html>

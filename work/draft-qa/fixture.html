@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="UTF-8"></head><body>
+<div role="dialog">
+<article data-testid="tweet"><a href="/fixture_owl/status/12345"><time>Yesterday</time></a><div lang="en" data-testid="tweetText">How many wheels does the model need?</div></article>
+<div data-testid="tweetTextarea_0" id="draftApp"></div>
+<div data-testid="toolBar"><button id="post">Reply</button></div></div>
+<script src="/qa/react.js"></script><script src="/qa/react-dom.js"></script>
+<script src="/qa/immutable.js"></script><script src="/qa/Draft.js"></script><script>
+  const {EditorState, ContentState, Editor} = Draft;
+  function Entry() {
+    const [draft, setDraft] = React.useState(() => EditorState.createWithContent(ContentState.createFromText('先剪下圆片。\n我们可以把它们涂蓝。')));
+    window.readModel = () => draft.getCurrentContent().getPlainText('\n');
+    return React.createElement(Editor, {editorState:draft, onChange:setDraft});
+  }
+  ReactDOM.render(React.createElement(Entry),document.getElementById('draftApp'));
+</script></body></html>

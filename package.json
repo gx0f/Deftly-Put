@@ -1,0 +1,18 @@
+{
+  "name": "deftly-put",
+  "private": true,
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "test": "npm run test:unit && npm run test:browser",
+    "test:unit": "node work/qa/language-settings.cjs && python3 work/qa/native-wire.py && python3 work/qa/login-callback.py && python3 work/openai-docs/verify.py",
+    "test:browser": "node work/qa/composer-languages.cjs && node work/qa/first-delete.cjs && node work/qa/stale-selection.cjs && node work/qa/reply-drafts.cjs && node work/qa/reply-switch.cjs",
+    "build": "python3 work/qa/package.py"
+  },
+  "devDependencies": {
+    "draft-js": "0.11.7",
+    "immutable": "3.7.6",
+    "playwright-core": "1.62.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  }
+}

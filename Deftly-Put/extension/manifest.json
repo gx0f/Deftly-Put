@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Deftly Put",
+  "version": "1.2.2",
+  "description": "在 X 上跨文化交流。用熟悉的语言写下想法，Deftly Put结合对话和文化语境，用对方的语言表达，并回译供你核对。",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwCUcVGuD6LhAwPILDptzW0kgP4nMPX4/FaO6eIRdimEmBTcd2K13j101np6nlBeEL5T6BAk/9jAkJu8TfWNFYfUVl9v65qkdj5ciVy8xAv68CY0mORa0jkIDUPXda3RBGzyC/w/udgV/fujPpjZ1UTHUMPXYksaBKwedebDZsb6H/cRF8v0QiffipxuzotIrZB/gWDZ3oEcyP2lcJdQO5ioCOFNLOvAaHlMnrofdNmoJqTjpZdkR4aQMMt+sO9rxbYGF+3zyvBzbOykmmpsvVBrKxFYUvOUJ7uCa8H7jxv8j7d1fwwWwzKciVEHsEYmKl4FGV6NSdtGO986EHqMAuQIDAQAB",
+  "permissions": [
+    "nativeMessaging",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://twitter.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Deftly Put"
+  }
+}
